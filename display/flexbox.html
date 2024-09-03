@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            color: white;
+            align-items: center;
+            justify-content: center;
+            height: 300px;
+            flex-wrap: wrap ;
+            border: solid 1px black;
+            
+        }
+        div{
+            flex-grow: 1;
+            
+        }
+        #quadrado1{
+            width: 50px;
+            background-color: black;
+            flex-grow: 1;
+        }
+        #quadrado2{
+            width: 50px;
+            background-color: red;
+            flex-grow: 2;
+        
+        }
+        #quadrado3{
+            width: 50px;;
+            background-color: rgb(5, 233, 36);
+            flex-grow: 2;
+
+        }
+    </style>
+<body>
+    <div class="container">
+        <div id="quadrado1">1</div>
+        <div id="quadrado2">2</div>
+        <div id="quadrado3">3</div>
+    </div>
+</body>
+</html>

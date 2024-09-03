@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    .item-container{ 
+        display: grid;
+        grid-template-columns:[a]100px [b]200px [c]300px;
+        grid-template-rows: [_1]100px [_2]100px [_3]50px;      
+        }
+        .item.a1 {
+            grid-column: a;
+            grid-row: _1;
+            background-color: black;
+            color: white;
+        
+        }
+        .item.b2{
+            grid-column: b;
+            grid-row: _2;
+            background-color: aquamarine;
+
+        }
+        .item.ac1{
+            grid-column: a /span 3;
+            background-color: red;
+        }
+        .item.ac1{
+            grid-column-start: 1;
+            grid-column-end: span 3;
+        }
+
+
+</style>
+<body>
+    <div class="item-container">
+        <div class="item a1">item1</div>
+        <div class="item b2">item 2</div>
+        <div class="item ac1">item 3</div>
+
+    </div>
+
+</body>
+</html>
