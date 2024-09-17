@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="mensagem"></h1>
+
+    <script>
+        function identificacao (saudacao, invalido) {
+            return saudacao + invalido;
+            
+
+        }
+        var regex = /^[A-Za-zÀ-ÖØ-öø-ÿ\s]+$/;
+        var chamar = window.prompt('como posso te chamar?');
+        if ( typeof chamar === 'string' && chamar.trim() !== '' && regex.test(chamar)){
+            document.querySelector('h1').innerHTML = identificacao('seja bem vindo ', '' + chamar);    
+        } else  {document.querySelector('h1').innerHTML = identificacao(chamar + '...', " é invalido",)
+
+        };
+        
+        
+        
+        
+    </script>
+</body>
+</html>

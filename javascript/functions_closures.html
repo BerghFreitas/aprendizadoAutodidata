@@ -1,0 +1,41 @@
+<form id="form">
+    <h1>bergh teste</h1>
+    <p>
+        <label for="inNome">Nome:</label>
+        <input type="text" id="inNome">
+        <label for="inIdade">Idade:</label>
+        <input type="number" id="inIdade">
+        <input type="submit" value="Conferência">
+    </p>
+</form>
+<h3 id="outResp"></h3>
+
+<script>
+    const frm = document.querySelector('form'); // Seleciona o formulário
+    const resp = document.querySelector('#outResp'); // Seleciona o h3 para exibir a resposta
+
+    // Função externa que captura os valores de nome e idade e retorna uma closure
+    function criaSaudacao(nome, idade) {
+        return function() {
+            if (idade >= 18) {
+                return `Seja bem-vindo(a), ${nome}!`;
+            } else {
+                return `Entrada não permitida, ${nome}.`;
+            }
+        }
+    }
+
+    frm.addEventListener('submit', (e) => {
+        e.preventDefault(); // Evita o envio tradicional do formulário
+
+        // Captura os valores dos inputs
+        const nome = document.querySelector('#inNome').value;
+        const idade = document.querySelector('#inIdade').value;
+
+        // Cria a saudação usando a closure
+        const saudacao = criaSaudacao(nome, idade); // Aqui a closure é criada
+
+        // Exibe a saudação retornada pela closure
+        resp.textContent = saudacao(); // A closure é chamada aqui
+    });
+</script>
